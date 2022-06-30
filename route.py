@@ -42,12 +42,15 @@ def hello():
         for i in range(len(title)):
             if i == 10:
                 break
-            res+="<tr>"
-            res += "<th>" + str(i+1) + "</th>"
-            res += "<th>"+str(title[i])+"</th>"
-            res += "<th>" + str(label[i]) + "</th>"
-            res += "<th>" + str(src[i]) + "</th>"
-            res += "</tr>"
+            try:
+                res += "<tr>"
+                res += "<td>" + str(i + 1) + "</td>"
+                res += "<td>" + str(title[i]) + "</td>"
+                res += "<td>" + str(label[i]) + "</td>"
+                res += "<td>" + str(src[i]) + "</td>"
+                res += "</tr>"
+            except:
+                break
         return res
 
 if __name__ == '__main__':
